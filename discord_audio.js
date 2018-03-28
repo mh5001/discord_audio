@@ -2,7 +2,8 @@ setInterval(function() {
 	const attachment = document.getElementsByClassName("attachment-1Vom9D");
   if (attachment.length < 1) return;
  	for(key in attachment) {
-  	if (attachment[key].childNodes[1].firstChild.firstChild.innerHTML.endsWith(".mp3")) {
+		const element = attachment[key].childNodes[1].firstChild.firstChild.innerHTML;
+  	if (element.endsWith(".mp3") || element.endsWith(".ogg") || element.endsWith(".wav")) {
     	createPlayer(attachment[key].parentNode,attachment[key].childNodes[1].firstChild.firstChild);
     }
   }
